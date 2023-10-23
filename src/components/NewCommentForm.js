@@ -22,7 +22,7 @@ export default function NewCommentForm({
   };
 
   const handleFormSubmit = (data) => {
-    fetch(`/posts/${postId}/comments`, {
+    fetch(`${process.env.API}/posts/${postId}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

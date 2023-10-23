@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./components/reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./components/UserContext";
+import 'dotenv/config';
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";

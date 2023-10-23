@@ -24,7 +24,7 @@ function App() {
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
-    fetch("/userInSession")
+    fetch(process.env.API + "/userInSession")
       .then((r) => r.json())
       .then((userAlreadyLoggedIn) => {
         userAlreadyLoggedIn.data &&
@@ -33,7 +33,7 @@ function App() {
   }, []);
 
   const handleLogout = () => {
-    fetch("/logout", { method: "DELETE" })
+    fetch(process.env.API + "/logout", { method: "DELETE" })
       .then((r) => r.json())
       .then((json) => {
         setLoggedInUser(null);

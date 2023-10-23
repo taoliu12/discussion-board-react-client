@@ -8,7 +8,7 @@ export default function NewPostForm() {
     const navigate = useNavigate();
 
       const handleFormSubmit = ( data ) =>{  
-        fetch( "/posts", 
+        fetch(process.env.API + "/posts", 
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
