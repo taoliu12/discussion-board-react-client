@@ -24,7 +24,8 @@ function App() {
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
-    fetch(process.env.API + "/userInSession")
+    console.log(process.env.REACT_APP_API);
+    fetch(process.env.REACT_APP_API + "/userInSession")
       .then((r) => r.json())
       .then((userAlreadyLoggedIn) => {
         userAlreadyLoggedIn.data &&
@@ -33,7 +34,7 @@ function App() {
   }, []);
 
   const handleLogout = () => {
-    fetch(process.env.API + "/logout", { method: "DELETE" })
+    fetch(process.env.REACT_APP_API + "/logout", { method: "DELETE" })
       .then((r) => r.json())
       .then((json) => {
         setLoggedInUser(null);

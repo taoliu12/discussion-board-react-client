@@ -32,7 +32,7 @@ export default function PostShow({ loggedInUser }) {
   };
 
   useEffect(() => {
-    fetch(`${process.env.API}/posts/${postId}`)
+    fetch(`${process.env.REACT_APP_API}/posts/${postId}`)
       .then((res) => res.json())
       .then((json) => {
         console.log("postshow json", json);
@@ -53,7 +53,7 @@ export default function PostShow({ loggedInUser }) {
 
   const handleDeletePost = () => {
     // debugger
-    fetch(`${process.env.API}${post.id}`, {
+    fetch(`${process.env.REACT_APP_API}${post.id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })
