@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./components/UserContext";
+import * as serviceWorker from "./serviceWorker";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -19,3 +20,5 @@ root.render(
     </React.StrictMode>
   </BrowserRouter>
 );
+
+serviceWorker.unregister();
