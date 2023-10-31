@@ -25,7 +25,10 @@ function App() {
 
   useEffect(() => {
     console.log(process.env.REACT_APP_API);
-    fetch(process.env.REACT_APP_API + "/userInSession")
+    fetch(process.env.REACT_APP_API + "/userInSession", {
+      method: 'GET',
+      credentials: 'include'
+    })
       .then((r) => r.json())
       .then((userAlreadyLoggedIn) => {
         userAlreadyLoggedIn.data &&
