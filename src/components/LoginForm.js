@@ -14,7 +14,7 @@ export default function LoginForm({ setLoggedInUser }) {
   const navigate = useNavigate();
 
   const handleLoginSubmit = (userToLogin) => {
-    fetch(process.env.REACT_APP_API + "/login", {
+    fetch('/api' + "/login", {
       method: "POST",
       credentials: 'include',
       headers: { "Content-Type": "application/json" },
