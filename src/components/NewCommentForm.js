@@ -34,7 +34,7 @@ export default function NewCommentForm({
           console.log("new comment submitted", json);
           setComments(comments);
           reset({ content: "" });
-          hideReplyForm();
+          //hideReplyForm();
         } else {
           setCustomError("Something went wrong. Please try again.");
           reset({ content: "" });
