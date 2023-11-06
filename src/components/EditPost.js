@@ -12,7 +12,7 @@ export default function EditPostForm({posts, loggedInUser}) {
   let { postId } = useParams();
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/posts/${postId}`)
+    fetch(`/api/posts/${postId}`)
     .then((res) => res.json())     
     .then((json) => setPost(json.data))
   }, []);
@@ -40,7 +40,7 @@ export default function EditPostForm({posts, loggedInUser}) {
   console.log('edit loggedInUser', loggedInUser)
 
   const handleFormSubmit = ( data ) =>  {  
-    fetch(process.env.REACT_APP_API + "/posts", 
+    fetch('/api' + "/posts", 
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
